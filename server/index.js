@@ -25,12 +25,15 @@ database.connect();
 //add middlewares
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
-	cors({
-		origin : "http://localhost:5173", //means jo bhi frontend request in link se aayegi use backend ko entertain krna h 
-		credentials : true,
-		
-	})
+  cors({
+    origin: [
+      "http://localhost:5173",  //development(local) frontend URL
+      "https://achievo-ed-tech.vercel.app", //production frontend URL
+    ],
+    credentials: true,
+  })
 );
 app.use(fileUpload({
 	useTempFiles : true,
