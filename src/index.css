@@ -1,0 +1,146 @@
+
+@import "tailwindcss";
+
+/* Hide default password eye icon (Edge/IE) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+@theme {
+  /* Fonts */
+  --font-sora: "Sora", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  
+  /* ===========================
+     BRAND
+  =========================== */
+
+  --color-primary-50: #F4F1FF;
+  --color-primary-100: #E9E2FF;
+  --color-primary-200: #D5C8FF;
+  --color-primary-300: #B89AFF;
+  --color-primary-400: #9B6DFF;
+  --color-primary-500: #8756F7;
+  --color-primary-600: #6F42F5;
+  --color-primary-700: #5A34D6;
+  --color-primary-800: #4628AA;
+  --color-primary-900: #311D78;
+
+  /* ===========================
+     BACKGROUND
+  =========================== */
+
+  --color-background: #07070C;
+  --color-bg-secondary: #0B0D15;
+  --color-surface: #11131C;
+  --color-card: #171A24;
+  --color-card-hover: #1E2230;
+
+  /* ===========================
+     TEXT
+  =========================== */
+
+  --color-heading: #FFFFFF;
+  --color-body: #CFCFD8;
+  --color-body-light: #B5B8C5;
+  --color-muted: #8C91A3;
+  --color-placeholder: #6E7387;
+
+  /* ===========================
+     BORDER
+  =========================== */
+
+  --color-border: #2B3040;
+  --color-border-light: #3B4153;
+  --color-divider: #202433;
+
+  /* ===========================
+     HERO BADGE
+  =========================== */
+
+  --color-badge-bg: #241A44;
+  --color-badge-border: #3C2D69;
+  --color-badge-text: #C7B5FF;
+  --color-badge-icon: #F7B531;
+
+  /* ===========================
+     BUTTONS
+  =========================== */
+
+  --color-btn-primary: #6F42F5;
+  --color-btn-primary-hover: #8756F7;
+
+  --color-btn-secondary: #141721;
+  --color-btn-secondary-hover: #1C2230;
+
+  /* ===========================
+     DASHBOARD
+  =========================== */
+
+  --color-dashboard: #0F1118;
+  --color-sidebar: #11141D;
+  --color-progress-track: #3A3E4A;
+  --color-progress-fill: #9A67FF;
+
+  /* ===========================
+     STATUS
+  =========================== */
+
+  --color-success: #36D27C;
+  --color-warning: #F7B531;
+  --color-error: #F05252;
+  --color-info: #3BB8FF;
+
+  /* ===========================
+     ICON COLORS
+  =========================== */
+
+  --color-purple-icon: #A06EFF;
+  --color-blue-icon: #36B7FF;
+  --color-green-icon: #2ED573;
+  --color-pink-icon: #FF5FB8;
+  --color-orange-icon: #FFB547;
+  --color-yellow-icon: #FFD54A;
+  --color-cyan-icon: #4ED8FF;
+
+  /* ===========================
+     FAQ
+  =========================== */
+
+  --color-faq-card: #11141D;
+
+  /* ===========================
+     NEWSLETTER
+  =========================== */
+
+  --color-newsletter: #2A154C;
+
+  /* ===========================
+     FOOTER
+  =========================== */
+
+  --color-footer: #090A11;
+}
+
+.hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+    background-color: #07070a; /* Achievo dark background */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(70%);
+    cursor: pointer;
+}
