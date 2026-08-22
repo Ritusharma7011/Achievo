@@ -1,14 +1,15 @@
 # Achievo – EdTech Learning Platform
 
-Achievo is a full-stack EdTech platform designed to provide students with a complete online learning experience while allowing instructors to create, manage, and monetize their courses.
+Achievo is a full-stack EdTech platform that provides students with an interactive learning experience while enabling instructors to create, manage, and deliver online courses.
 
 ## 🚀 Live Demo
 
-[Visit Achievo](https://achievo-ed-tech.vercel.app/)
+**[Visit Achievo](https://achievo-ed-tech.vercel.app/)**
 
 ## 📌 Features
 
 ### 👤 Authentication & Authorization
+
 - User registration with OTP-based email verification
 - JWT-based authentication
 - Protected routes and role-based authorization
@@ -16,40 +17,42 @@ Achievo is a full-stack EdTech platform designed to provide students with a comp
 - Cryptographically generated password reset tokens
 - Automatic OTP expiration using MongoDB TTL
 - Bcrypt-based password hashing
-- Persistent authentication state using Redux Toolkit
+- Client-side authentication state management using Redux Toolkit
 
 ### 📚 Course Management
+
 - Browse and explore available courses
 - Course categories and catalog pages
 - Instructor-side course creation and management
 - Course editing and deletion
-- Hierarchical course structure with:
-  - Sections
-  - Subsections
-  - Lectures
+- Course organization using sections, subsections, and lectures
 - Course thumbnail and lecture media uploads
-- Student enrollment and learning workflows
+- Student course enrollment
 
 ### 🎓 Learning & Progress
-- Enrolled courses for students
+
+- View enrolled courses
 - Lecture completion tracking
 - Course progress tracking
 - Instructor dashboard
 - Course ratings and reviews
 
-### 💳 Payment
+### 💳 Payment Integration
+
 - Razorpay payment integration
 - Backend payment verification
 - Automated payment-success email notifications
 - Course enrollment after successful payment verification
 
 ### 🖼️ Media Management
+
 - Cloudinary integration for media storage
 - Course thumbnails
 - Lecture videos
 - Profile images
 
-### 📱 Responsive UI
+### 📱 Responsive User Interface
+
 - Responsive design for desktop and mobile devices
 - Reusable React components
 - Tailwind CSS-based styling
@@ -60,6 +63,7 @@ Achievo is a full-stack EdTech platform designed to provide students with a comp
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - React.js
 - Redux Toolkit
 - React Router
@@ -67,52 +71,57 @@ Achievo is a full-stack EdTech platform designed to provide students with a comp
 - Axios
 
 ### Backend
+
 - Node.js
 - Express.js
 - REST APIs
 
 ### Database
+
 - MongoDB
 - Mongoose
 
 ### Authentication & Security
+
 - JWT
 - Bcrypt
-- OTP-based verification
+- OTP-based email verification
 - Token expiration
+- Protected API routes
+- Role-based authorization
 
-### Integrations
+### Third-Party Integrations
+
 - Razorpay – Payment processing
 - Cloudinary – Media storage
 - Nodemailer – Email services
 
 ### Development Tools
+
 - Git
 - GitHub
 - Postman
-- VS Code
 
 ### Deployment
+
 - Vercel – Frontend
 - Render – Backend
 - MongoDB Atlas – Database
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ Project Structure
 
 ```text
-Achievo
+Achievo/
 │
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── redux/
-│   │   ├── hooks/
-│   │   └── utils/
-│   │
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── redux/
+│   ├── hooks/
 │   └── ...
 │
 ├── server/
@@ -123,11 +132,26 @@ Achievo
 │   ├── utils/
 │   └── ...
 │
+├── public/
+├── package.json
+├── vite.config.js
 └── README.md
+```
+
+---
 
 ## ⚙️ Getting Started
 
-### 1. Clone the repository
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- npm
+- MongoDB Atlas account
+- Git
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Ritusharma7011/Achievo.git
@@ -135,6 +159,8 @@ cd Achievo
 ```
 
 ### 2. Install Frontend Dependencies
+
+From the project root:
 
 ```bash
 npm install
@@ -145,36 +171,42 @@ npm install
 ```bash
 cd server
 npm install
+cd ..
 ```
 
 ### 4. Configure Environment Variables
 
 Create the required `.env` files for the frontend and backend.
 
-#### Frontend
+### Frontend Environment Variables
+
+Create a `.env` file in the project root:
 
 ```env
 VITE_BASE_URL=http://localhost:4000/api/v1
 ```
 
-#### Backend
+### Backend Environment Variables
 
-Add the required environment variables:
+Create a `.env` file inside the `server` folder and configure the required credentials:
 
 ```env
 MONGODB_URL=
 JWT_SECRET=
+
 MAIL_HOST=
 MAIL_USER=
 MAIL_PASS=
+
 RAZORPAY_KEY=
 RAZORPAY_SECRET=
+
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 ```
 
-> ⚠️ Never commit `.env` files or expose secret keys in the repository.
+> **Important:** Never commit `.env` files or expose API keys, database credentials, or other sensitive information in the repository.
 
 ### 5. Run the Application
 
@@ -184,28 +216,81 @@ From the project root:
 npm run dev
 ```
 
-This starts both the frontend and backend development servers.
+The development setup runs both the frontend and backend servers.
 
-**Frontend:**  
-`http://localhost:5173`
+Frontend:
 
-**Backend:**  
-`http://localhost:4000`
+```text
+http://localhost:5173
+```
+
+Backend:
+
+```text
+http://localhost:4000
+```
 
 ---
 
 ## 🔐 Security
 
-Achievo implements several security mechanisms:
+Achievo implements multiple security mechanisms to protect user accounts and application workflows:
 
 - JWT-based authentication
 - Protected API routes
 - Role-based authorization
 - Bcrypt password hashing
-- Expiring OTPs using MongoDB TTL
+- OTP-based email verification
+- MongoDB TTL-based OTP expiration
 - Expiring password reset tokens
 - Backend-side payment verification
 - Environment variables for sensitive credentials
+
+---
+
+## 💳 Payment Flow
+
+The payment workflow is implemented using Razorpay:
+
+```text
+Student selects course
+        ↓
+Payment initiated
+        ↓
+Razorpay checkout
+        ↓
+Payment completed
+        ↓
+Backend verifies payment
+        ↓
+Course enrollment
+        ↓
+Payment-success email
+```
+
+---
+
+## 📚 Course Learning Flow
+
+```text
+Instructor
+    ↓
+Create Course
+    ↓
+Add Sections
+    ↓
+Add Subsections
+    ↓
+Add Lectures
+    ↓
+Publish Course
+    ↓
+Student Enrollment
+    ↓
+Watch Lectures
+    ↓
+Track Course Progress
+```
 
 ---
 
@@ -213,34 +298,39 @@ Achievo implements several security mechanisms:
 
 The application is deployed using:
 
-- **Frontend:** Vercel
-- **Backend:** Render
-- **Database:** MongoDB Atlas
+| Service | Platform |
+|---|---|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
+| Media Storage | Cloudinary |
 
 ### Live Application
 
-[Achievo](https://achievo-ed-tech.vercel.app/)
+**[https://achievo-ed-tech.vercel.app/](https://achievo-ed-tech.vercel.app/)**
 
 ---
 
 ## 📸 Screenshots
 
-Screenshots of the application can be added here:
+Screenshots of the application can be added here to showcase the major workflows:
 
 - Landing Page
+- Login / Signup
 - Course Catalog
 - Course Details
-- Login / Signup
 - Student Dashboard
 - Instructor Dashboard
 - Course Creation
+- Course Learning
 - Payment Flow
+- Profile Management
 
 ---
 
 ## 🔮 Future Improvements
 
-Planned improvements include:
+The following features are planned for future versions of Achievo:
 
 - AI-powered quiz generation
 - AI-based content summarization
@@ -256,3 +346,11 @@ Planned improvements include:
 
 - GitHub: [Ritusharma7011](https://github.com/Ritusharma7011)
 - LinkedIn: [Ritu Kumari](https://www.linkedin.com/in/ritu-kumari-069830290/)
+
+---
+
+## ⭐ Acknowledgements
+
+Built as a full-stack project to explore real-world application development using the MERN stack, REST APIs, authentication, payment integration, cloud media storage, and deployment.
+
+---
