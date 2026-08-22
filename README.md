@@ -124,3 +124,135 @@ Achievo
 │   └── ...
 │
 └── README.md
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Ritusharma7011/Achievo.git
+cd Achievo
+```
+
+### 2. Install Frontend Dependencies
+
+```bash
+npm install
+```
+
+### 3. Install Backend Dependencies
+
+```bash
+cd server
+npm install
+```
+
+### 4. Configure Environment Variables
+
+Create the required `.env` files for the frontend and backend.
+
+#### Frontend
+
+```env
+VITE_BASE_URL=http://localhost:4000/api/v1
+```
+
+#### Backend
+
+Add the required environment variables:
+
+```env
+MONGODB_URL=
+JWT_SECRET=
+MAIL_HOST=
+MAIL_USER=
+MAIL_PASS=
+RAZORPAY_KEY=
+RAZORPAY_SECRET=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+> ⚠️ Never commit `.env` files or expose secret keys in the repository.
+
+### 5. Run the Application
+
+From the project root:
+
+```bash
+npm run dev
+```
+
+This starts both the frontend and backend development servers.
+
+**Frontend:**  
+`http://localhost:5173`
+
+**Backend:**  
+`http://localhost:4000`
+
+---
+
+## 🔐 Security
+
+Achievo implements several security mechanisms:
+
+- JWT-based authentication
+- Protected API routes
+- Role-based authorization
+- Bcrypt password hashing
+- Expiring OTPs using MongoDB TTL
+- Expiring password reset tokens
+- Backend-side payment verification
+- Environment variables for sensitive credentials
+
+---
+
+## 🌐 Deployment
+
+The application is deployed using:
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+
+### Live Application
+
+[Achievo](https://achievo-ed-tech.vercel.app/)
+
+---
+
+## 📸 Screenshots
+
+Screenshots of the application can be added here:
+
+- Landing Page
+- Course Catalog
+- Course Details
+- Login / Signup
+- Student Dashboard
+- Instructor Dashboard
+- Course Creation
+- Payment Flow
+
+---
+
+## 🔮 Future Improvements
+
+Planned improvements include:
+
+- AI-powered quiz generation
+- AI-based content summarization
+- Personalized learning roadmaps
+- Student project showcase
+- Course completion certificates
+
+---
+
+## 👩‍💻 Author
+
+**Ritu Kumari**
+
+- GitHub: [Ritusharma7011](https://github.com/Ritusharma7011)
+- LinkedIn: [Ritu Kumari](https://www.linkedin.com/in/ritu-kumari-069830290/)
