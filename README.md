@@ -94,7 +94,7 @@ Achievo is a full-stack EdTech platform that provides students with an interacti
 
 - Razorpay – Payment processing
 - Cloudinary – Media storage
-- Nodemailer – Email services
+- Brevo – Email services
 
 ### Development Tools
 
