@@ -39,7 +39,7 @@ exports.resetPasswordToken = async(req,res) =>{
 
         //create url
         // const url = `http://localhost:5173/update-password/${token}`;
-        const url = `https://achievo-ed-tech.vercel.app/${token}`;
+        const url = `https://achievo-ed-tech.vercel.app/update-password/${token}`;
 
         //send mail containing url 
         await mailSender(email, "Password Reset Link - Achievo" ,
