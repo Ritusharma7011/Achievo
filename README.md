@@ -135,6 +135,7 @@ Achievo/
 ├── public/
 ├── package.json
 ├── vite.config.js
+├── vercel.json
 └── README.md
 ```
 
@@ -194,9 +195,8 @@ Create a `.env` file inside the `server` folder and configure the required crede
 MONGODB_URL=
 JWT_SECRET=
 
-MAIL_HOST=
-MAIL_USER=
-MAIL_PASS=
+BREVO_API_KEY=
+BREVO_SENDER_EMAIL=
 
 RAZORPAY_KEY=
 RAZORPAY_SECRET=
