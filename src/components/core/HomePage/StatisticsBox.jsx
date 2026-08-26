@@ -21,7 +21,7 @@ function StatisticsBox(){
 
                             <div>
                             <h2 className="text-white font-bold text-xl lg:text-2xl">
-                                25K+
+                                200+
                             </h2>
 
                             <p className="text-body text-xs sm:text-sm">
@@ -40,7 +40,7 @@ function StatisticsBox(){
 
                             <div>
                             <h2 className="text-white font-bold text-xl lg:text-2xl">
-                                500+
+                                50+
                             </h2>
 
                             <p className="text-body text-xs sm:text-sm">
@@ -59,7 +59,7 @@ function StatisticsBox(){
 
                             <div>
                             <h2 className="text-white font-bold text-xl lg:text-2xl">
-                                200+
+                                20+
                             </h2>
 
                             <p className="text-body text-xs sm:text-sm">
@@ -78,7 +78,7 @@ function StatisticsBox(){
 
                             <div>
                             <h2 className="text-white font-bold text-xl lg:text-2xl">
-                                95%
+                                High
                             </h2>
 
                             <p className="text-body text-xs sm:text-sm">

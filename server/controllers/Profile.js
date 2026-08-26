@@ -2,9 +2,9 @@ const Profile = require("../models/Profile");
 const User = require("../models/User");
 const {uploadImageToCloudinary} = require("../utils/imageUploader");
 const mongoose = require("mongoose");
-const courseProgress = require("../models/CourseProgress");
-
-
+const CourseProgress = require("../models/CourseProgress");
+const Course = require("../models/Course")
+const {convertSecondsToDuration} = require("../utils/secToDuration").default
 exports.updateProfile = async(req,res) => {
     try{
         //fetch data
@@ -58,44 +58,7 @@ exports.updateProfile = async(req,res) => {
     }
 }
 
-// //Explore - deleted account after 5 days
-// exports.deleteAccount = async(req,res) => {
-//     try{
-//         //fetch Id
-//         const id = req.user.id;
 
-//         //validation
-//         const userDetails = await User.findById(id);
-//         if(!userDetails){
-//             return res.status(404).json({
-//             success : false,
-//             message : "User not found"
-//             })
-//         }
-        
-//         //delete profile
-//         await Profile.findByIdAndDelete({_id : userDetails.additionalDetails});
-
-//         //TODO : uneroll user from all enrolled courses
-
-//         //delete user
-//         await User.findByIdAndDelete({_id : id});
-
-//         //response
-//         return res.status(200).json({
-//             success : true,
-//             message : "Profile deleted successfully"
-//         })
-
-//     }
-//     catch(error){
-//         console.log(error);
-//         return res.status(500).json({
-//             success : false,
-//             message : "Something went wrong, please try later"
-//         })
-//     }
-// }
 exports.deleteAccount = async (req, res) => {
       try {
         const id = req.user.id;
@@ -182,7 +145,7 @@ exports.getEnrolledCourses = async (req, res) => {
 		for (var j = 0; j < userDetails.courses[i].courseContent.length; j++) {
 			totalDurationInSeconds += userDetails.courses[i].courseContent[
 			j
-			].subSection.reduce(
+			].subsection.reduce(
 			(acc, curr) => acc + parseInt(curr.timeDuration),
 			0
 			);
@@ -190,7 +153,7 @@ exports.getEnrolledCourses = async (req, res) => {
 			totalDurationInSeconds
 			);
 			SubsectionLength +=
-			userDetails.courses[i].courseContent[j].subSection.length;
+			userDetails.courses[i].courseContent[j].subsection.length;
 		}
 		let courseProgressCount = await CourseProgress.findOne({
 			courseID: userDetails.courses[i]._id,
@@ -215,8 +178,8 @@ exports.getEnrolledCourses = async (req, res) => {
 		});
 		}
 		return res.status(200).json({
-		success: true,
-		data: userDetails.courses,
+			success: true,
+			data: userDetails.courses,
 		});
 	} catch (error) {
 		return res.status(500).json({

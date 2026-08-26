@@ -58,7 +58,7 @@ function Home(){
                     <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
                         <AvatarGroup/>
                         <div className="text-body text-sm">
-                            <div className="text-[13px] md:text-[14px] lg:text-[16px]"> <span className="bg-linear-to-r from-primary-500 via-primary-400 to-primary-300 bg-clip-text text-transparent font-bold text-[16px] sm:text-lg ">25000+ </span>learners</div>
+                            <div className="text-[13px] md:text-[14px] lg:text-[16px]"> <span className="bg-linear-to-r from-primary-500 via-primary-400 to-primary-300 bg-clip-text text-transparent font-bold text-[16px] sm:text-lg ">200+ </span>learners</div>
                             <div className="text-[13px] md:text-[14px] lg:text-[16px]">already growing with Achievo</div>
                         </div>
                     </div>

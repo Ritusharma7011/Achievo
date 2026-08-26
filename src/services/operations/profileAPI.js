@@ -17,11 +17,11 @@ export function getUserDetails(token, navigate) {
 
         dispatch(setLoading(true))
         try {
-        const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
-            Authorization: `Bearer ${token}`,
+            const response = await apiConnector("GET", GET_USER_DETAILS_API, null, {
+                Authorization: `Bearer ${token}`,
         })
 
-        console.log("GET_USER_DETAILS API RESPONSE............", response)
+        console.log("getUserDetails api : ", response)
 
         if (!response.data.success) {
             throw new Error(response.data.message)
@@ -33,7 +33,7 @@ export function getUserDetails(token, navigate) {
         dispatch(setUser({ ...response.data.data, image: userImage }))
         } catch (error) {
         dispatch(logout(navigate))
-        console.log("GET_USER_DETAILS API ERROR............", error)
+        console.log("GET_USER_DETAILS API ERROR: ", error)
         toast.error(error.response?.data?.message || "Could Not Get User Details")
         }
         toast.dismiss(toastId)
@@ -53,10 +53,10 @@ export async function getUserEnrolledCourses(token) {
             Authorization: `Bearer ${token}`,
         }
         )
-        // console.log(
-        //   "GET_USER_ENROLLED_COURSES_API API RESPONSE............",
-        //   response
-        // )
+        console.log(
+          "getUserEnrolledCourse: ",
+          response
+        )
 
         if (!response.data.success) {
         throw new Error(response.data.message)
@@ -64,7 +64,7 @@ export async function getUserEnrolledCourses(token) {
         result = response.data.data
     } 
     catch (error) {
-        console.log("GET_USER_ENROLLED_COURSES_API API ERROR............", error)
+        console.log("getUserEnrolledCourse error: ", error)
         toast.error(error.response?.data?.message || "Could Not Get Enrolled Courses")
     }
     toast.dismiss(toastId)
@@ -78,10 +78,10 @@ export async function getInstructorData(token) {
     const response = await apiConnector("GET", GET_INSTRUCTOR_DATA_API, null, {
       Authorization: `Bearer ${token}`,
     })
-    console.log("GET_INSTRUCTOR_DATA_API API RESPONSE............", response)
+    console.log("GET_INSTRUCTOR_DATA_API API RESPONSE: ", response)
     result = response?.data?.courses
   } catch (error) {
-    console.log("GET_INSTRUCTOR_DATA_API API ERROR............", error)
+    console.log("GET_INSTRUCTOR_DATA_API API ERROR: ", error)
     toast.error(error.response?.data?.message || "Could Not Get Instructor Data")
   }
   toast.dismiss(toastId)

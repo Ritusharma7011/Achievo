@@ -11,37 +11,37 @@ const courseCategory = [
     {
         icon: <SlGlobe className="text-[38px] text-blue-500 px-1 py-1"/> ,
         name: "Web Development",
-        desc: "120+ Courses"
+        desc: "10+ Courses"
     },
     {
         icon: <GoGraph className="text-[38px] text-purple-500 px-1 py-1" /> ,
         name: "Data Science",
-        desc: "80+ Courses"
+        desc: "15+ Courses"
     },
     {
         icon: <FaMobile className="text-[38px] text-green-500 px-1 py-1"/> ,
         name: "Mobile Development",
-        desc: "70+ Courses"
+        desc: "20+ Courses"
     },
     {
         icon: <IoInfiniteSharp className="text-[38px] text-cyan-500 px-1 py-1"/> ,
         name: "DevOps",
-        desc: "60+ Courses"
+        desc: "10+ Courses"
     },
     {
         icon: <FaCode className="text-[38px] text-pink-500 px-1 py-1"/> ,
         name: "Programming",
-        desc: "70+ Courses"
+        desc: "15+ Courses"
     },
     {
         icon: <FaShieldAlt className="text-[38px] text-yellow-500 px-1 py-1"/> ,
         name: "Cyber Security",
-        desc: "50+ Courses"
+        desc: "20+ Courses"
     },
     {
         icon: <FiFigma className="text-[38px] text-red-500 px-1 py-1"/> ,
         name: "UI/UX Design",
-        desc: "40+ Courses"
+        desc: "30+ Courses"
     }
 
 ]

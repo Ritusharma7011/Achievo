@@ -12,6 +12,4 @@ function convertSecondsToDuration(totalSeconds) {
   }
 }
 
-export default {
-  convertSecondsToDuration,
-};
+export default {convertSecondsToDuration}

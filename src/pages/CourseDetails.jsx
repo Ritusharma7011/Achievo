@@ -86,10 +86,10 @@ function CourseDetails() {
         return <Error />
     }
 
-    console.log("FULL RESPONSE AAGYAA :", response)
+    console.log("FULL RESPONSE :", response)
     // console.log("FULL RESPONSE AAGYAA :", response.data);
     // console.log("FULL RESPONSE AAGYAA :", response.data?.courseDetails);
-    console.log("FULL RESPONSE AAGYAA :", response.courseDetails[0])
+    console.log("FULL RESPONSE :", response.courseDetails[0])
 
     const {
         _id: course_id,
@@ -161,7 +161,7 @@ function CourseDetails() {
                             </div>
 
                             <div className="text-center text-sm leading-7 text-gray-400 sm:text-base lg:text-left">
-                                <ul className="space-y-1">
+                                {/* <ul className="space-y-1">
                                     {courseDescription
                                         .split("\n")
                                         .map((line, index) => (
@@ -183,7 +183,12 @@ function CourseDetails() {
                                                 </span>
                                             </li>
                                         ))}
-                                </ul>
+                                </ul> */}
+                                <div className="space-y-2">
+                                    {courseDescription.split("\n").map((line, index) => (
+                                        <p key={index}>{line}</p>
+                                    ))}
+                                </div>
                             </div>
 
                             <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-0 text-sm lg:justify-start">

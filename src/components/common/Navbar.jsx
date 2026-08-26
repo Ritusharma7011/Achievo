@@ -136,10 +136,10 @@ function Navbar() {
                         {
                             user && user?.accountType != "Instructor" && (
                                 <Link to={"/dashboard/cart"}className="relative">
-                                    <FaCartShopping className = "text-white text-[20px]"/>
+                                    <FaCartShopping className = "text-white text-[25px]"/>
                                     {
                                         totalItems > 0 && (
-                                            <span>
+                                            <span className="text-xs absolute text-white bg-red-400 right-0 -top-[19px] items-center flex justify-center rounded-full w-5 h-5  ">
                                                 {totalItems}
                                             </span>
                                         )
@@ -179,7 +179,7 @@ function Navbar() {
                                 <FaCartShopping className = "text-white text-[20px]"/>
                                 {
                                     totalItems > 0 && (
-                                        <span>
+                                        <span className="text-xs absolute text-white bg-red-400 right-0 -top-[19px] items-center flex justify-center rounded-full w-5 h-5  ">
                                             {totalItems}
                                         </span>
                                     )
