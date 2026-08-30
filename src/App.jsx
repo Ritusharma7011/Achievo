@@ -26,75 +26,98 @@ import MyCourses from './components/core/Dashboard/MyCourses'
 import EditCourse from './components/core/Dashboard/EditCourse'
 import Catalog from './pages/Catalog'
 import CourseDetails from "./pages/CourseDetails"
+import ViewCourse from './pages/ViewCourse'
+import VideoDetails from './components/core/ViewCourse/VideoDetails'
 
 
 function App() {
 
-  const {user} = useSelector((state)=>state.profile);
+  	const {user} = useSelector((state)=>state.profile);
 
-  return (
-    <div className='w-screen min-h-screen bg-background font-sora scroll-smooth '>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element = {<Home/>}></Route>
-        <Route path='/login' element = {<Login/>}></Route>
-        <Route path='/signup' element = {<Signup/>}></Route>
-        <Route path='/forgot-password' element={<ResetPassword/>}></Route>
-        <Route path='/update-password/:id' element={<UpdatePassword/>}></Route>
-        <Route path='/verify-email' element={<VerifyEmail/>}></Route>
-        <Route path='/about' element={<About/>}></Route>
-        <Route path='/contact' element={<ContactUs/>}></Route>
-        <Route path='/catalog/:catalogName' element={<Catalog/>}></Route>
-        <Route path="courses/:courseId" element={<CourseDetails />} />
+	return (
+		<div className='w-screen min-h-screen bg-background font-sora scroll-smooth '>
+		<Navbar/>
+		<Routes>
+			<Route path='/' element = {<Home/>}></Route>
+			<Route path='/login' element = {<Login/>}></Route>
+			<Route path='/signup' element = {<Signup/>}></Route>
+			<Route path='/forgot-password' element={<ResetPassword/>}></Route>
+			<Route path='/update-password/:id' element={<UpdatePassword/>}></Route>
+			<Route path='/verify-email' element={<VerifyEmail/>}></Route>
+			<Route path='/about' element={<About/>}></Route>
+			<Route path='/contact' element={<ContactUs/>}></Route>
+			<Route path='/catalog/:catalogName' element={<Catalog/>}></Route>
+			<Route path="courses/:courseId" element={<CourseDetails />} />
+
+			<Route
+			element={
+				<ProtectedRoute>
+				<Dashboard/>
+				</ProtectedRoute>
+			}
+			> 
+			<Route path='dashboard/my-profile' element ={<MyProfile/>} />
+			<Route path='dashboard/settings' element ={<Settings/>} />
+
+			{
+				user?.accountType === ACCOUNT_TYPE.STUDENT && (
+				<>
+					<Route path='dashboard/enrolled-courses' element ={<EnrolledCourses/>} /> 
+					<Route path='dashboard/cart' element ={<Cart/>} /> 
+				</>
+				)
+			}
+
+			{
+				user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
+				<>
+					<Route path='dashboard/add-course' element ={<AddCourse/>} /> 
+					<Route path='dashboard/my-courses' element= {<MyCourses/>}/>
+					<Route path='dashboard/edit-course/:courseId' element= {<EditCourse/>}/>
+				</>
+				)
+			}
+			
+
+			</Route>
+
+
+			<Route
+				path="/dashboard/enrolled-courses/view-course/:courseId"
+				element={
+					<ProtectedRoute>
+					<ViewCourse />
+					</ProtectedRoute>
+				}
+				>
+				<Route
+					path="section/:sectionId/subsection/:subsectionId"
+					element={<VideoDetails />}
+				/>
+			</Route>
+        
 
 
 
-        {/* Protected Routes */}
-        {/* <Route path='dashboard/my-profile'
-        element={
-            <ProtectedRoute>
-              <MyProfile/>
-            </ProtectedRoute>
-        }
-        /> ESE NI KRNA */}
 
-        <Route
-        element={
-            <ProtectedRoute>
-              <Dashboard/>
-            </ProtectedRoute>
-        }
-        > 
-          <Route path='dashboard/my-profile' element ={<MyProfile/>} />
-          <Route path='dashboard/settings' element ={<Settings/>} />
 
-          {
-            user?.accountType === ACCOUNT_TYPE.STUDENT && (
-              <>
-                <Route path='dashboard/enrolled-courses' element ={<EnrolledCourses/>} /> 
-                <Route path='dashboard/cart' element ={<Cart/>} /> 
-              </>
-            )
-          }
 
-          {
-            user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
-              <>
-                <Route path='dashboard/add-course' element ={<AddCourse/>} /> 
-                <Route path='dashboard/my-courses' element= {<MyCourses/>}/>
-                <Route path='dashboard/edit-course/:courseId' element= {<EditCourse/>}/>
-              </>
-            )
-          }
-          
 
-        </Route>
 
-        <Route path = "*" element = {<Error/>} />
-      </Routes>
-    </div>
 
-  )
+
+
+
+
+
+
+
+
+			<Route path = "*" element = {<Error/>} />
+		</Routes>
+		</div>
+
+	)
 }
 
 export default App

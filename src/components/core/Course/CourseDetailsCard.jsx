@@ -88,7 +88,8 @@ function CourseDetailsCard({
                                 )
                                     ? () =>
                                           navigate(
-                                              "/dashboard/enrolled-courses"
+                                            //   "/dashboard/enrolled-courses"
+                                            ""
                                           )
                                     : handleBuyCourse
                             }

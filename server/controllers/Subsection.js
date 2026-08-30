@@ -1,4 +1,5 @@
 const SubSection = require("../models/SubSection");
+const cloudinary = require("cloudinary").v2;
 const Section = require("../models/Section");
 const {uploadImageToCloudinary} = require("../utils/imageUploader");
 require("dotenv").config();

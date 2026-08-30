@@ -86,10 +86,12 @@ import { useSelector } from "react-redux"
 import Loading from "../../common/Loading"
 import ProgressBar from "@ramonak/react-progress-bar"
 import { FiBookOpen, FiClock, FiPlayCircle } from "react-icons/fi"
+import { useNavigate } from "react-router-dom"
 
 function EnrolledCourses() {
     const { token } = useSelector((state) => state.auth)
     const [enrolledCourses, setEnrolledCourses] = useState(null)
+    const navigate = useNavigate();
 
     const getEnrolledCourse = async () => {
         try {
@@ -157,12 +159,19 @@ function EnrolledCourses() {
                     <div>
                         {enrolledCourses.map((course, index) => (
                             <div
-                                key={course._id || index}
+                                // key={course?._id || index}
+                                key={index}
                                 className="border-b border-white/10 p-3 transition-all duration-200 last:border-b-0 hover:bg-white/3 sm:p-5 md:p-6"
                             >
 
                                 {/* ================= DESKTOP ================= */}
-                                <div className="hidden grid-cols-[2fr_1fr_1.5fr] items-center gap-5 md:grid lg:gap-6">
+                                <div className="hidden grid-cols-[2fr_1fr_1.5fr] items-center gap-5 md:grid lg:gap-6"
+                                    onClick={()=>{
+                                        navigate(
+                      `/dashboard/enrolled-courses/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/subsection/${course.courseContent?.[0]?.subsection?.[0]?._id}`
+                    )
+                                    }}
+                                >
 
                                     {/* Course */}
                                     <div className="flex min-w-0 items-center gap-4">
@@ -216,7 +225,13 @@ function EnrolledCourses() {
                                 </div>
 
                                 {/* ================= MOBILE / TABLET ================= */}
-                                <div className="flex flex-col gap-4 md:hidden">
+                                <div className="flex flex-col gap-4 md:hidden"
+                                    onClick={()=>{
+                                        navigate(
+                      `/dashboard/enrolled-courses/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/subsection/${course.courseContent?.[0]?.subsection?.[0]?._id}`
+                    )
+                                    }}
+                                >
 
                                     {/* Course */}
                                     <div className="flex min-w-0 gap-3 sm:gap-4">

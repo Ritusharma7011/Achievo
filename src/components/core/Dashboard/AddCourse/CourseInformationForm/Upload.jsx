@@ -75,12 +75,18 @@ export default function Upload({
                 className="h-full w-full rounded-md object-cover"
               />
             ) : (
-              <ReactPlayer
-                    url={previewSource}
-                    controls
-                    width="100%"
-                    height="100%"
-                />
+              // <ReactPlayer
+              //       url={previewSource}
+              //       controls
+              //       width="100%"
+              //       height="100%"
+              //   />
+              <video
+    src={previewSource}
+    controls
+    className="w-full rounded-md"
+    style={{ maxHeight: "400px" }}
+/>
             )}
             {!viewData && (
               <button

@@ -138,6 +138,12 @@ const enrollStudents = async(courses, userId, res)=>{
                 {returnDocument: "after"}
             )
 
+            await CourseProgress.create({
+                courseID: courseId,
+                userId: userId,
+                completedVideos: [],
+            });
+
             if(!enrolledCourse){
                 return res.status(404).json({
                     success: false,
