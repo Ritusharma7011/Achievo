@@ -12,6 +12,8 @@ import StatisticsBox from "../components/core/HomePage/StatisticsBox"
 import CourseCategories from "../components/core/HomePage/CourseCategories"
 import ProjectShowcase from "../components/core/HomePage/ProjectShowcase";
 import Footer from "../components/common/Footer"
+import ReviewSlider from "../components/common/ReviewSlider"
+
 
 function Home(){
     return(
@@ -64,7 +66,7 @@ function Home(){
                     </div>
                 </div>
 
-                {/* Right Hero Side - filhaal khaali h */}
+                {/* Right Hero Side*/}
                 <div className="md:max-h-full flex md:w-[55%] max-h-[80%] max-w-[80%] mx-auto items-center justify-center ">
                     <Animation/>
                 </div>
@@ -111,7 +113,14 @@ function Home(){
             
 
             {/* Section 3 */}
-                {/* Reviews */} 
+            {/* Reviews */} 
+            <div className="flex flex-col items-center mt-12">
+                    <div className=" uppercase text-primary-500 text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl font-bold ">What other learners say</div>
+                    {/* <div  className=" text-white text-[19px] sm:[21px] md:text-[23px] lg:text-[1.7rem] font-semibold">Real Projects. Real Impact.</div> */}
+                    <ReviewSlider/>
+                </div> 
+            
+
 
             {/* Footer */}
             <Footer/>

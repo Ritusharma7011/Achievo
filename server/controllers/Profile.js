@@ -58,7 +58,6 @@ exports.updateProfile = async(req,res) => {
     }
 }
 
-
 exports.deleteAccount = async (req, res) => {
       try {
         const id = req.user.id;
@@ -189,7 +188,6 @@ exports.getEnrolledCourses = async (req, res) => {
 	}
 };
 
-
 exports.updateDisplayPicture = async(req,res) =>{
 	try {
 		const displayPicture = req.files.displayPicture;
@@ -247,14 +245,3 @@ exports.instructorDashboard = async (req, res) => {
 		res.status(500).json({ message: "Server Error" });
 	}
 };
-
-
-// ***********
-//  YE SB BANANA H exports.updateDisplayPicture = async (req, res) => {
-// };
-
-// exports.getEnrolledCourses = async (req, res) => {
-// };
-
-// exports.instructorDashboard = async (req, res) => {
-// };

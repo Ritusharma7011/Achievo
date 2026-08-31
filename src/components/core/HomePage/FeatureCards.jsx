@@ -25,17 +25,17 @@ const features = [
     {
         icon : <PiCertificateLight className="text-pink-icon text-[40px]"/>, 
         name : "Certificates",
-        description : "Earn shareable certificates and boost your career opportunities"
+        description : "Earn shareable certificates and boost your career opportunities. Coming Soon!"
     },
     {
         icon : <FaRoad className="text-orange-icon text-[40px]"/>, 
         name : "Career Roadmaps",
-        description : "Structured roadmaps to guide you from begginer to job-ready"
+        description : "Structured roadmaps to guide you from begginer to job-ready. Coming Soon!"
     },
     // {
     //     icon : <FaLaptopCode className="text-yellow-icon text-[40px]"/>, 
     //     name : "Showcase Projects",
-    //     description : "After completion of course you can showcase your projects to on Achievo"
+    //     description : "After completion of course you can showcase your projects to on Achievo."
     // },
 
 ]
